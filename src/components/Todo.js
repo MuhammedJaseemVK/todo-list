@@ -28,17 +28,21 @@ function Todo() {
                 <input type="text" value={newTodo} placeholder='Enter a todo' onChange={handleInputChange} />
                 <button className='add-btn' onClick={handleTodo}>Add todo</button>
             </div>
-            <ul className='todo-list'>
-                {
-                    todos.map((todo,index)=>
-                    <li key={index}>
-                        {todo}
-                        <button className='delete-btn' onClick={()=>handleDeleteTodo(index)}>Delete</button>
-                    </li>
-                    )
-                }
-                
-            </ul>
+            {
+                 (todos.length > 0) ?( 
+                    <ul className='todo-list'>
+                    {
+                        todos.map((todo,index)=>
+                        <li key={index}>
+                            {todo}
+                            <button className='delete-btn' onClick={()=>handleDeleteTodo(index)}>Delete</button>
+                        </li>
+                        )
+                    }
+                </ul>
+                ):
+                <p>No todos found</p>
+            }
         </div>
     )
 }
