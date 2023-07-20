@@ -1,10 +1,10 @@
 import './App.css';
-import Reminder from './components/Reminder';
+import Todo from './components/Todo';
 
 function App() {
   return (
 <div>
-    <Reminder />
+    <Todo />
 </div>
   );
 }
